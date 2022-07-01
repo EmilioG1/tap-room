@@ -1,6 +1,7 @@
 import React from "react";
 import NewItemForm from "../NewItemForm/NewItemForm";
 import Menu from "../Menu/Menu";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 class MenuControl extends React.Component {
 
@@ -8,12 +9,22 @@ class MenuControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainItemList: []
+      mainItemList: [],
+      selectedItem: null
     };
   }
 
   handleClick = () => {
-    this.setState(prevState => ({ formVisibleOnPage: !prevState.formVisibleOnPage }));
+    if (this.state.selectedItem != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedItem: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   handleAddingNewItemToList = (newItem) => {
@@ -24,14 +35,22 @@ class MenuControl extends React.Component {
     });
   }
 
+  handleChangingSelectedItem = (id) => {
+    const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
+    this.setState({ selectedItem: selectedItem })
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+
+    if (this.state.selectedItem != null) {
+      currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} />
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList} />
       buttonText = 'Back to Beer Menu';
     } else {
-      currentlyVisibleState = <Menu menuList={this.state.mainItemList} />;
+      currentlyVisibleState = <Menu menuList={this.state.mainItemList} onItemSelection={this.handleChangingSelectedItem} />;
       buttonText = 'Add beer';
     }
 

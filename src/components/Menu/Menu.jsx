@@ -8,20 +8,24 @@ function Menu(props) {
   return (
     <React.Fragment>
       {/* <img src={biergarten} alt='An alpine bierhaus' /> */}
-      <h1>Haus Menu</h1>
-      {props.menuList.map((item, index) => 
-        <Item name={item.name}
-          beerstyle={item.beerstyle}
+      <hr />
+      {props.menuList.map((item) => 
+        <Item
+          whenItemClicked = { props.onItemSelection }
+          name={item.name}
+          location={item.location}
           price={item.price}
           abv={item.abv}
-          key={index} />
+          id={item.id}
+          key={item.id} />
       )}
     </React.Fragment>
   );
 }
 
 Menu.propTypes = {
-  menuList: PropTypes.array
+  menuList: PropTypes.array,
+  onTicketSelection: PropTypes.func
 };
 
 export default Menu;
