@@ -10,7 +10,8 @@ class MenuControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainItemList: [],
-      selectedItem: null
+      selectedItem: null,
+      count: 124
     };
   }
 
@@ -38,6 +39,10 @@ class MenuControl extends React.Component {
   handleChangingSelectedItem = (id) => {
     const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
     this.setState({ selectedItem: selectedItem })
+  }
+
+  decrement = () => {
+    this.setState({ count: this.state.count - 1 });
   }
 
   render() {
