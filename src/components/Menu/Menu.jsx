@@ -1,36 +1,17 @@
 import React from "react";
 import Item from "../Item/Item";
 import biergarten from './../img/biergarten.jpeg'
+import PropTypes from 'prop-types';
 
-const mainMenuList = [
-  {
-    name: 'Pilsner',
-    style: 'German',
-    price: '5',
-    abv: '4.5'
-  },
-  {
-    name: 'Helles',
-    style: 'Munich',
-    price: '4',
-    abv: '4.5'
-  },
-  {
-    name: 'Pilsener',
-    style: 'Czech',
-    price: '6',
-    abv: '5'
-  }
-]
 
-function Menu() {
+function Menu(props) {
   return (
     <React.Fragment>
       <img src={biergarten} alt='An alpine bierhaus' />
       <h1>Haus Menu</h1>
-      {mainMenuList.map((item, index) => 
+      {props.menuList.map((item, index) => 
         <Item name={item.name}
-          style={item.style}
+          beerStyle={item.beerStyle}
           price={item.price}
           abv={item.abv}
           key={index} />
@@ -38,5 +19,9 @@ function Menu() {
     </React.Fragment>
   );
 }
+
+Menu.propTypes = {
+  menuList: PropTypes.array
+};
 
 export default Menu;
