@@ -45,7 +45,8 @@ class MenuControl extends React.Component {
     let buttonText = null;
 
     if (this.state.selectedItem != null) {
-      currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} />
+      currentlyVisibleState = <ItemDetail item={this.state.selectedItem} />
+      buttonText='Back to Beer Menu'
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList} />
       buttonText = 'Back to Beer Menu';

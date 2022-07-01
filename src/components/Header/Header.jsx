@@ -1,8 +1,9 @@
 import React from "react";
+import './Header.css'
 
 function Header() {
   return (
-    <h1>Lager Haus</h1>
+      <h1 id='header'>Lager Haus</h1>
   );
 }
 
