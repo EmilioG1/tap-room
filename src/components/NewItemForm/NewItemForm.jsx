@@ -9,7 +9,7 @@ function NewItemForm(props) {
     props.onNewItemCreation(
       {
         name: event.target.name.value,
-        style: event.target.style.value,
+        beerstyle: event.target.style.value,
         price: event.target.price.value,
         abv: event.target.abv.value,
         id: v4()
@@ -25,7 +25,7 @@ function NewItemForm(props) {
           placeholder='Beer Names' />
         <input
           type='text'
-          beerStyle='beerStyle'
+          beerstyle='beerstyle'
           placeholder='Beer Style' />
         <input
           type='number'

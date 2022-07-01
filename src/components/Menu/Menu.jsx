@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 function Menu(props) {
   return (
     <React.Fragment>
-      <img src={biergarten} alt='An alpine bierhaus' />
+      {/* <img src={biergarten} alt='An alpine bierhaus' /> */}
       <h1>Haus Menu</h1>
       {props.menuList.map((item, index) => 
         <Item name={item.name}
-          beerStyle={item.beerStyle}
+          beerstyle={item.beerstyle}
           price={item.price}
           abv={item.abv}
           key={index} />
