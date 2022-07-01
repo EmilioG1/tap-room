@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function NewItemForm(props) {
 
-  function handleNewItemSubmission(event) {
+  const handleNewItemSubmission = (event) => {
     event.preventDefault();
     props.onNewItemCreation(
       {
@@ -23,16 +23,16 @@ function NewItemForm(props) {
           placeholder='Beer Names' />
         <input
           type='text'
-          location='location'
-          placeholder='Beer Location' />
-        {/* <input
-          type='number'
-          price='price'
-          placeholder='Price per Pint' />
+          name='location'
+          placeholder='Beer Style' />
         <input
           type='number'
-          abv='abv'
-          placeholder='Alcohol by Volume' /> */}
+          name='price'
+          placeholder='Price per Pint' />
+        <input
+          type='float'
+          name='abv'
+          placeholder='Alcohol by Volume' />
         
         <button type='submit'>Hook up the Keg!</button>
       </form>

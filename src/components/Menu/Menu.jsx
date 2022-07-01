@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 function Menu(props) {
   return (
     <React.Fragment>
-      {/* <img src={biergarten} alt='An alpine bierhaus' /> */}
+      <img src={biergarten} alt='An alpine bierhaus' />
       <hr />
       {props.menuList.map((item) => 
         <Item

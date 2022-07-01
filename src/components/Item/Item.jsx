@@ -5,8 +5,8 @@ function Item(props) {
 
   return (
     <div onClick={() => props.whenItemClicked(props.id)}>
-      <h3>{props.name} - {props.location}</h3>
-      <p>{props.price} - <em>{props.abv}</em></p>
+      <h3>{props.location} style {props.name}</h3>
+      <p>${props.price} - <em>{props.abv}%</em></p>
     </div>
   );
 }
