@@ -25,7 +25,7 @@ function Menu(props) {
 
 Menu.propTypes = {
   menuList: PropTypes.array,
-  onTicketSelection: PropTypes.func
+  onItemSelection: PropTypes.func
 };
 
 export default Menu;

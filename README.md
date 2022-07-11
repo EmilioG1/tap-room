@@ -20,6 +20,7 @@ _A tap room website utilizing React.js that allows the user to input beers to be
 ## Setup/Installation Requirements
 * _Clone this repository to your desktop_
 * _Navigate to the top level of tap-room main branch and open in code editor_
+* _run <code>npm install</code> in terminal_
 * _run <code>npm start</code> in terminal to open website in browser_
 
 ## Known Bugs
