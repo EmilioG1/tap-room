@@ -14,8 +14,8 @@ function Item(props) {
 Item.propTypes = {
   name: PropTypes.string,
   location: PropTypes.string,
-  price: PropTypes.number,
-  abv: PropTypes.number,
+  price: PropTypes.string,
+  abv: PropTypes.string,
   id: PropTypes.string,
   whenItemClicked: PropTypes.func
 };
